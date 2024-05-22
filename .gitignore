@@ -1,4 +1,8 @@
 *.out
 *.o
 /build
+<<<<<<< HEAD
 /.vscode/
+=======
+.vscode/
+>>>>>>> ae4ac21af6b8267526302bd44e16b185869db83e
