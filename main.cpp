@@ -1,20 +1,158 @@
+// // 11번 문제
+// #include <iostream>
+// using namespace std;
 
-#include <iostream>
-#include "Account.h"
-using namespace std;
+// class Box{
+//     int width, height;
+//     char fill;
+// public:
+//     Box(int w, int h){setSize(w, h); fill='*';}
+
+//     void setFill(char f){fill = f;}
+//     void setSize(int w, int h){width=w; height=h;}
+//     void draw();
+// };
+
+// void Box::draw(){
+//     for(int n=0; n<height; n++){
+//         for(int m=0; m<width; m++) cout<<fill; 
+//         cout<<endl;
+//     }
+// }
+
+// int main(){
+//     Box b(10,2);
+//     b.draw();
+//     cout<<endl;
+//     b.setSize(7,4);
+//     b.setFill('^');
+//     b.draw();
+// }
+
+
+// // 9번 문제
+// #include <iostream>
+// #include "joseph_Oval.h"
+// using namespace std;
+
+// class Oval{
+//     int width, height;
+// public:
+//     Oval();    
+//     ~Oval();
+//     Oval(int w, int h);
+
+//     int getWidth();
+//     int getHeight();
+//     void set(int w, int h);
+//     void show();
+// };
+
+// Oval::Oval(){
+//     width = 1;
+//     height = 1;
+// }
+
+// Oval::~Oval(){
+//     cout<<"Oval 소멸 : width = "<<width<<", height = "<<height<<endl;
+// }
+
+// Oval::Oval(int w, int h){
+//     width = w;
+//     height = h;
+// }
+
+// int Oval::getWidth(){
+//     return width;
+// }
+
+// int Oval::getHeight(){
+//     return height;
+// }
+
+// void Oval::set(int w, int h){
+//     width = w;
+//     height = h;
+// }
+
+// void Oval::show(){
+//     cout<<"width = "<<width<<", height = "<<height<<endl;
+// }
+
+// int main()
+// {
+//     Oval a, b(3,4);
+//     a.set(10, 20);
+//     a.show();
+//     cout<<"width = "<<b.getWidth()<<", height = "<<b.getHeight()<<endl;
+
+//     return 0;
+// }
 
 
 
-int main(){
-    Account kuk("kitae", 1, 5000);
+// // 5번 문제
+// #include <iostream>
+// #include <cstdlib>
+// #include <ctime>
+// using namespace std;
 
-    kuk.deposit(50000);
-    cout<<kuk.getOwner()<<"의 잔액은 "<<kuk.inquiry()<<endl;
-    kuk.withdraw(20000);
-    cout<<kuk.getOwner()<<"의 잔액은 "<<kuk.inquiry()<<endl;
+// class Random{
+// public:
+//     Random();
 
-    return 0;
-}
+//     int next();
+//     int nextInRange(int min, int max);
+// };
+
+// Random::Random(){
+// }
+
+// int Random::next(){
+//     return rand() % 101;
+// }
+
+// int Random::nextInRange(int min, int max){
+//     return rand()%(max-min+1) + min;
+// }
+
+// int main(){
+//     srand(time(NULL));
+//     Random r;
+//     cout<<"-- 0에서 "<<RAND_MAX<<"까지의 랜덤 정수 10개--"<<endl;
+//     for(int i=0; i<10; i++){
+//         int n = r.next();
+//         cout<<n<<' ';
+//     }
+
+//     cout<<endl<<endl<<"-- 2에서 "<<"4까지의 랜덤 정수 10개--"<<endl;
+//     for(int i=0; i<10; i++){
+//         int n = r.nextInRange(2, 4);
+//         cout<<n<<' ';
+//     }
+//     cout<<endl;
+
+//     return 0;
+// }
+
+
+
+
+// // 3번 문제
+// #include <iostream>
+// #include "Account.h"
+// using namespace std;
+
+// int main(){
+//     Account kuk("kitae", 1, 5000);
+
+//     kuk.deposit(50000);
+//     cout<<kuk.getOwner()<<"의 잔액은 "<<kuk.inquiry()<<endl;
+//     kuk.withdraw(20000);
+//     cout<<kuk.getOwner()<<"의 잔액은 "<<kuk.inquiry()<<endl;
+
+//     return 0;
+// }
 
 
 
