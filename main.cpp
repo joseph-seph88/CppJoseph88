@@ -1,8 +1,20 @@
 #include <iostream>
+#include "Circle.h"
+#include "Rectangle.h"
 using namespace std;
+
+void increase(Circle& c){
+    int r = c.getRadius();
+    c.setRadius(r+1);
+}
 
 int main(int argc, char const *argv[]){
     
+        Circle waffle(30);
+        increase(waffle);
+        cout<<waffle.getRadius()<<endl;
+
+
 
     return 0;
 }
