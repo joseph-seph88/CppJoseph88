@@ -12,7 +12,7 @@ bool bigger(int a, int b, int& big){
         return true;
     } else {
         
-        
+
         return false;
         }
 }
@@ -22,6 +22,6 @@ int main(){
     Compare com;
     int a, b, big;
     cout<<"2개의 정수를 입력하세요 : ";
-    cin.getline();
+    cin.getline(com, 2);
 
 }
