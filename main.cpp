@@ -1,32 +1,62 @@
-#include <iostream>
+#include <gtest/gtest.h>
+#include <string>
 using namespace std;
 
-class MyNumber {
-private:
-    int num;
-public:
-    MyNumber(int n) : num(n) {}
-    MyNumber operator+(const MyNumber& other) const {
-        return MyNumber(num + other.num);
-    }
 
-    void display() const {
-        cout << "Number: " << num << endl;
-    }
-};
 
-int main() {
-    MyNumber num1(5);
-    MyNumber num2(10);
 
-    // 덧셈 연산자 중복 사용
-    MyNumber result = num1 + num2;
 
-    // 결과 출력
-    result.display();
 
-    return 0;
-}
+// bool isPrime(int N) {
+//     for (int i = 2; i < N; ++i) {
+//         if (N % i == 0) return false;
+//     }
+//     return true;
+// }
+
+
+// TEST(PrimeTest, isPrime) {
+//     EXPECT_TRUE(isPrime(2));
+//     EXPECT_TRUE(isPrime(3));
+//     EXPECT_FALSE(isPrime(4));
+//     EXPECT_TRUE(isPrime(5));
+//     EXPECT_FALSE(isPrime(6));    
+// }
+
+
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// class MyNumber {
+// private:
+//     int num;
+// public:
+//     MyNumber(int n) : num(n) {}
+//     MyNumber operator+(const MyNumber& other) const {
+//         return MyNumber(num + other.num);
+//     }
+
+//     void display() const {
+//         cout << "Number: " << num << endl;
+//     }
+// };
+
+// int main() {
+//     MyNumber num1(5);
+//     MyNumber num2(10);
+
+//     // 덧셈 연산자 중복 사용
+//     MyNumber result = num1 + num2;
+
+//     // 결과 출력
+//     result.display();
+
+//     return 0;
+// }
 
 // #include <iostream>
 // using namespace std;
