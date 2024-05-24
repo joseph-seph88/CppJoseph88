@@ -8,24 +8,15 @@ private:
     double weight;
     string name;
 public:
-    Person();
-    Person(int id, string name);
-    Person(int id, string name, double weight);
+    Person(int id = 1, string name = "Grace", double weight = 20.5);
     void show();
 };
 
-Person::Person() {
-    id = 0;
-    weight = 20.5;
-    name = "Grace";
-}
-
-Person::Person(int id, string name) {
+Person::Person(int id, string name, double weight) {
     this->id = id;
     this->name = name;
-    weight = 20.5;
+    this->weight = weight;
 }
-
 
 void Person::show() { cout << id << ' ' << weight << ' ' << name << endl; }
 

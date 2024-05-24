@@ -15,7 +15,7 @@ public:
 };
 
 Person::Person() {
-    id = 0;
+    id = 1;
     weight = 20.5;
     name = "Grace";
 }
