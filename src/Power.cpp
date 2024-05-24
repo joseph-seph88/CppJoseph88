@@ -1,26 +1,6 @@
+#include "Power.h"
 #include <iostream>
-#include <string>
-
 using namespace std;
-class Power
-{
-private:
-    int punch;
-    int kick;
-
-public:
-    Power(int punch = 0, int kick = 0);
-    ~Power();
-    void show();
-    Power pow(Power &another);
-    Power operator+(Power &another);
-    bool operator==(Power &another);
-    Power& operator+=(Power &another);
-    Power& operator++();
-    Power& operator++(int);
-    Power& operator()(int power);
-    Power& operator<<(int power);
-};
 Power& Power::operator()(int power){
     this->kick *= power;
     this->punch *= power;
@@ -47,6 +27,16 @@ Power::~Power()
 void Power::show()
 {
     cout << "punch = " << punch << ", kick = " << kick << endl;
+}
+
+int Power::getPunch()
+{
+    return this->punch;
+}
+
+int Power::getKick()
+{
+    return this->kick;
 }
 
 Power Power::pow(Power &another)
@@ -86,30 +76,7 @@ Power &Power::operator++()
 
 Power &Power::operator++(int)
 {
-    // TODO: 여기에 return 문을 삽입합니다.
-}
-
-int main(int argc, char const *argv[])
-{
-    Power p1(3, 5);
-    Power p2(4, 6);
-    Power p3 = p1 + p2;
-    p3.show();
-    if(p1==p2)
-        cout<<"p1 == p2"<<endl;
-    else
-        cout<<"p1 != p2"<<endl;
-
-    p1+=p2;
-    p1.show();
-
-    p1(2);
-    p1.show();
-
-    p1<<3<<4<<5;
-    p1.show();
-
-    
-
-    return 0;
+    this->kick++;
+    this->punch++;
+    return *this;
 }
