@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-#include "Power.h"
+#include "../src/Power.h"
 using namespace std;
 
 
