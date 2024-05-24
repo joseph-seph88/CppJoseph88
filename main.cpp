@@ -1,23 +1,65 @@
 #include <iostream>
-#include "Circle.h"
-#include "Rectangle.h"
 using namespace std;
 
-void increase(Circle& c){
-    int r = c.getRadius();
-    c.setRadius(r+1);
+class Power{
+    int kick, punch;
+public:
+    Power(int kick = 0, int punch = 0);
+    void show();
+    Power pow(Power& another);
+    Power operator+(Power& another);
+};
+
+Power::Power(int kick, int punch){
+    this->kick = kick;
+    this->punch = punch;
 }
 
-int main(int argc, char const *argv[]){
+void Power::show(){
+    cout<<"kick = "<<kick<<", punch = "<<punch<<endl;
+}
+
+Power Power::pow(Power &another){
+    Power other;
+    other.kick = this->kick + another.kick;
+    other.punch = this->punch + another.punch;
+    return other;
+}
+
+Power Power::operator+(Power &another){
     
-        Circle waffle(30);
-        increase(waffle);
-        cout<<waffle.getRadius()<<endl;
+    return Power();
+}
 
-
-
+int main(){
+    Power p1(3,5), p2(4,6), p3;
+    p3 = p1.pow(p2);
+    p3.show();
     return 0;
 }
+
+
+
+// #include <iostream>
+// #include "Circle.h"
+// #include "Rectangle.h"
+// using namespace std;
+
+// void increase(Circle& c){
+//     int r = c.getRadius();
+//     c.setRadius(r+1);
+// }
+
+// int main(int argc, char const *argv[]){
+    
+//         Circle waffle(30);
+//         increase(waffle);
+//         cout<<waffle.getRadius()<<endl;
+
+
+
+//     return 0;
+// }
 
 
 
