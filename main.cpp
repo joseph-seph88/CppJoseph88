@@ -1,6 +1,48 @@
 #include <gtest/gtest.h>
-#include <string>
-using namespace std;
+#include "Power.h"
+
+TEST(PowerTest, OperatorPlusTest){
+    Power power(5, 6);
+    Power another(7, 8);
+    Power third;
+    third = power + another;    
+
+    EXPECT_EQ(third.getKick(), 14);
+    EXPECT_EQ(third.getPunch(), 12);
+
+}
+
+TEST(PowerTest, OperatorEqualTest){
+    Power power(5, 6);
+    Power another(7, 8);
+    EXPECT_EQ(power == another, false);
+    EXPECT_EQ(power == power, true);
+}
+
+// int main(int argc, char const *argv[])
+// {
+//     Power p1(3, 5);
+//     Power p2(4, 6);
+//     Power p3 = p1 + p2;
+//     p3.show();
+//     if(p1==p2)
+//         cout<<"p1 == p2"<<endl;
+//     else
+//         cout<<"p1 != p2"<<endl;
+
+//     p1+=p2;
+//     p1.show();
+
+//     p1(2);
+//     p1.show();
+
+//     p1<<3<<4<<5;
+//     p1.show();
+
+    
+
+//     return 0;
+// }
 
 
 
@@ -422,3 +464,4 @@ using namespace std;
 
 //     return 0;
 // }
+
