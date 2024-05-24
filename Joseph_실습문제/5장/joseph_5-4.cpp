@@ -2,32 +2,32 @@
 // using namespace std;
 
 // class Compare{
-//     int a;
-//     int b; 
 //     int big;
 // public:
 //     bool bigger(int a, int b, int& big);
+
 // };
 
 // bool Compare::bigger(int a, int b, int& big){
-//     if(a==b) {
-//         return true;
-//     } else {
-//         big = (a>b) ? a : b;
-//         return false;
+//         if(a==b) {
+//             cout<<"두 수가 서로 같습니다"<<endl;            
+//             return true;
 //         }
-// }
+//         else if(a>b) {
+//             big = a; 
+//         }
+//         else {
+//             big = b;
+//         }
+//         cout<<"가장 큰 수 : "<<big<<endl;
+//         return false;
+//     }
 
 // int main(){
-    
-//     Compare com;
 //     int a, b, big;
-//     cout<<"2개의 정수를 입력하세요 : ";
+//     cout<<"정수 2개를 입력하세요 : ";
 //     cin>>a>>b;
-    
-//     if(com.bigger(a, b, big)){
-//         cout<<"두 숫자가 동일 합니다"<<endl;
-//     } else{
-//         cout<<"2개의 정수 중 더 큰 값은 "<<big<<endl;
-//     }
+//     Compare cp;
+//     cp.bigger(a, b, big);
+//     return 0;
 // }

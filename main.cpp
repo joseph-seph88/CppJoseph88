@@ -1,44 +1,88 @@
 #include <iostream>
 using namespace std;
 
-class Power{
-    int kick, punch;
+class MyNumber {
+private:
+    int num;
 public:
-    Power(int kick = 0, int punch = 0);
-    void show();
-    Power pow(Power& another);
-    Power operator+(Power& another);
+    MyNumber(int n) : num(n) {}
+    MyNumber operator+(const MyNumber& other) const {
+        return MyNumber(num + other.num);
+    }
+
+    void display() const {
+        cout << "Number: " << num << endl;
+    }
 };
 
-Power::Power(int kick, int punch){
-    this->kick = kick;
-    this->punch = punch;
-}
+int main() {
+    MyNumber num1(5);
+    MyNumber num2(10);
 
-void Power::show(){
-    cout<<"kick = "<<kick<<", punch = "<<punch<<endl;
-}
+    // 덧셈 연산자 중복 사용
+    MyNumber result = num1 + num2;
 
-Power Power::pow(Power &another){
-    Power other;
-    other.kick = this->kick + another.kick;
-    other.punch = this->punch + another.punch;
-    return other;
-}
+    // 결과 출력
+    result.display();
 
-Power Power::operator+(Power &another){
-    
-    return Power();
-}
-
-int main(){
-    Power p1(3,5), p2(4,6), p3;
-    p3 = p1.pow(p2);
-    p3.show();
     return 0;
 }
 
+// #include <iostream>
+// using namespace std;
 
+// class Power{
+//     int kick, punch;
+// public:
+//     Power(int kick = 0, int punch = 0);
+//     void show();
+//     Power pow(Power& another);
+//     Power operator+(Power& another);
+//     bool operator==(Power& another);
+// };
+
+// Power::Power(int kick, int punch){
+//     this->kick = kick;
+//     this->punch = punch;
+// }
+
+// void Power::show(){
+//     cout<<"kick = "<<kick<<", punch = "<<punch<<endl;
+
+// }
+
+// Power Power::pow(Power &another){
+//     Power other;
+//     other.kick = this->kick + another.kick;
+//     other.punch = this->punch + another.punch;
+//     return other;
+// }
+
+// Power Power::operator+(Power &another){
+//     Power Power;
+//     Power.kick = this->kick + another.kick;
+//     Power.punch = this->punch + another.punch;
+//     return Power;
+// }
+
+// bool Power::operator==(Power &another){
+//     if(this->kick == another.kick && this->punch == another.punch)
+//         return true;
+//     else return false;
+// }
+
+// int main(){
+//     Power p1(3,5), p2(4,6), p3;
+//     p3 = p1.pow(p2);
+//     p3.show();
+//     if(p1 == p2)
+//         cout<<"p1 == p2"<<endl;
+//     else
+//         cout<<"p1 != p2"<<endl;
+//     p3 = p1 + p2;
+//     p3.show(); 
+//     return 0;
+// }
 
 // #include <iostream>
 // #include "Circle.h"
