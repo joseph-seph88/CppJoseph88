@@ -1,58 +1,92 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
-class TV{
-    int size;
+class Base {
+	int a;
+protected:
+	void setA(int a) { this->a = a; }
 public:
-    TV(){size = 20;}
-    TV(int size){
-        this->size = size;
-        cout<<"TV constructor"<<endl;        
-    }
-    ~TV() {
-        cout<<"TV Distructor"<<endl;
-    }
-    int getSize(){return this->size;}
-
+	void showA() { cout << a; }
 };
 
-class WideTV : public TV{
-private:
-    bool isWide;
+class Derived : private Base {//private -> public으로 바꾼다면 GrandDerived가 접근 가능
+	int b;
+protected:
+	void setB(int b) { this->b = b; }
 public:
-    WideTV(int size, bool isWide) : TV(size){
-        this->isWide = isWide;
-        cout<<"WideTV constructor"<<endl;
-        }
-    ~WideTV() {
-        cout<<"WideTV Distructor"<<endl;
-    }
-    bool getIsWide(){return this->isWide;}
+	void showB() {
+		setA(5); 						// ① 접근 가능
+		showA(); 					// ② 접근 가능
+		cout << b;
+	}
 };
 
-class smartTV : public WideTV{
-private:
-    string ipAddress;    
-public:
-    smartTV(int size, bool isWide, string ipAddress) : WideTV(size, isWide){
-        this->ipAddress = ipAddress;
-        cout<<"smartTV constructor"<<endl;
-    }
-    ~smartTV() {
-        cout<<"smartTV Distructor"<<endl;
-    }    
-    string getIpAddress(){return this->ipAddress;}
+class GrandDerived : public Derived {
+	int c;
+protected:
+	void setAB(int x) {
+		setA(x); 						// ③ 접근 불가능
+		showA(); 					// ④ 접근 불가능
+		setB(x); 						// ⑤ 접근 가능
+	}
 };
 
-int main(){
 
-    smartTV tv(32, true, "237.84.2.178");
-    cout << tv.getSize() << ", " << tv.getIsWide() << ", " << tv.getIpAddress() << endl;
+// #include <iostream>
+// #include <string>
+// using namespace std;
+
+// class TV{
+//     int size;
+// public:
+//     TV(){size = 20;}
+//     TV(int size){
+//         this->size = size;
+//         cout<<"TV constructor"<<endl;        
+//     }
+//     ~TV() {
+//         cout<<"TV Distructor"<<endl;
+//     }
+//     int getSize(){return this->size;}
+
+// };
+
+// class WideTV : public TV{
+// private:
+//     bool isWide;
+// public:
+//     WideTV(int size, bool isWide) : TV(size){
+//         this->isWide = isWide;
+//         cout<<"WideTV constructor"<<endl;
+//         }
+//     ~WideTV() {
+//         cout<<"WideTV Distructor"<<endl;
+//     }
+//     bool getIsWide(){return this->isWide;}
+// };
+
+// class smartTV : public WideTV{
+// private:
+//     string ipAddress;    
+// public:
+//     smartTV(int size, bool isWide, string ipAddress) : WideTV(size, isWide){
+//         this->ipAddress = ipAddress;
+//         cout<<"smartTV constructor"<<endl;
+//     }
+//     ~smartTV() {
+//         cout<<"smartTV Distructor"<<endl;
+//     }    
+//     string getIpAddress(){return this->ipAddress;}
+// };
+
+// int main(){
+
+//     smartTV tv(32, true, "237.84.2.178");
+//     cout << tv.getSize() << ", " << tv.getIsWide() << ", " << tv.getIpAddress() << endl;
 
 
-    return 0;    
-}
+//     return 0;    
+// }
 
 
 
