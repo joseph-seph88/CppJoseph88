@@ -1,10 +1,12 @@
 #pragma once
-
-class Shape{
+class Shape
+{
 private:
-    Shape* next;
+    Shape *next;
+
 protected:
     virtual void draw();
+
 public:
     Shape(){next = nullptr;}
     virtual ~Shape(){}

@@ -1,17 +1,17 @@
 #include "Shape.h"
 #include <iostream>
-using namespace std;
 
-Shape* Shape::add(Shape* p){
-    this->next = p;
+void Shape::paint()
+{
+    draw();
+}
+
+Shape *Shape::add(Shape *p)
+{
+    this->next=p;
     return p;
 }
 
-void Shape::draw(){
-    cout<<"Shape"<<endl;
-}
-
-void Shape::paint(){
-    this->draw();
-    return draw();
-}
+ void Shape::draw(){
+     std::cout<<"Shape::draw()"<<std::endl;
+ }

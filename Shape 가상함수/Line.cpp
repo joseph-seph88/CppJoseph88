@@ -1,6 +1,6 @@
 #include "Line.h"
-using namespace std;
 
-void Line::draw(){
-    cout << "Line" << endl;
-}
+void Line::draw()
+{
+    cout<<"Line::draw()"<<endl;
+};
