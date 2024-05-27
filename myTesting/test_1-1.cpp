@@ -15,8 +15,8 @@ int main(){
     Str s1("hello");
     Str s2 = s1;
 
-    cout<<s1.getString()<<endl;
-    cout<<s2.getString()<<endl;
+    cout<<s1;
+    cout<<s2;
 
     return 0;
 }
