@@ -1,9 +1,6 @@
-#include <string>
+#include "Power.h"
 #include <iostream>
-#include "../src/Power.h"
 using namespace std;
-
-
 Power& Power::operator()(int power){
     this->kick *= power;
     this->punch *= power;
@@ -30,6 +27,16 @@ Power::~Power()
 void Power::show()
 {
     cout << "punch = " << punch << ", kick = " << kick << endl;
+}
+
+int Power::getPunch()
+{
+    return this->punch;
+}
+
+int Power::getKick()
+{
+    return this->kick;
 }
 
 Power Power::pow(Power &another)
@@ -70,4 +77,6 @@ Power &Power::operator++()
 Power &Power::operator++(int)
 {
     this->kick++;
+    this->punch++;
+    return *this;
 }

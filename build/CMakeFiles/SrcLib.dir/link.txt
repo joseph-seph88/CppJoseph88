@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSrcLib.a CMakeFiles/SrcLib.dir/src/Power.cpp.o CMakeFiles/SrcLib.dir/src/main.cpp.o
+/usr/bin/ranlib libSrcLib.a
