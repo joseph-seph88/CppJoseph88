@@ -1,7 +1,0 @@
-git pull --rebase joseph88-mac main   이렇게 리베이스로 하니까 깃허브에서 내컴으로 자료가 와지네;;
-
-git add . 
-git commit -m "any message" 
-git status
-git push joseph88-mac joseph88-mac:main
-이렇게하면 내게 메인으로 업로드됨
