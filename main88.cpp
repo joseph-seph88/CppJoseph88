@@ -1,35 +1,83 @@
-#include <iostream>
-using namespace std;
 
-class Base {
-	int a;
-protected:
-	void setA(int a) { this->a = a; }
-public:
-	void showA() { cout << a; }
-};
 
-class Derived : private Base {//private -> public으로 바꾼다면 GrandDerived가 접근 가능
-	int b;
-protected:
-	void setB(int b) { this->b = b; }
-public:
-	void showB() {
-		setA(5); 						// ① 접근 가능
-		showA(); 					// ② 접근 가능
-		cout << b;
-	}
-};
 
-class GrandDerived : public Derived {
-	int c;
-protected:
-	void setAB(int x) {
-		setA(x); 						// ③ 접근 불가능
-		showA(); 					// ④ 접근 불가능
-		setB(x); 						// ⑤ 접근 가능
-	}
-};
+
+
+
+
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Base{
+// public:
+//     void virtual f() {cout<<"Base::f()"<<endl;}
+    
+// };
+// class Derived : public Base{
+// public:
+//     void virtual f() {cout<<"Derived::f()"<<endl;}
+// };
+
+// int main(){
+//     Derived d, *derived = &d;
+//     Base *base = derived;
+
+
+//     d.f();
+//     d.Base::f();
+    
+//     derived->f();
+//     base->f();
+    
+//     derived->Base::f();
+
+
+//     return 0;
+// }
+
+
+
+
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Base {
+// 	int a;
+// protected:
+// 	void setA(int a) { this->a = a; }
+// public:
+// 	void showA() { cout << a; }
+// };
+
+// class Derived : private Base {//private -> public으로 바꾼다면 GrandDerived가 접근 가능
+// 	int b;
+// protected:
+// 	void setB(int b) { this->b = b; }
+// public:
+// 	void showB() {
+// 		setA(5); 						// ① 접근 가능
+// 		showA(); 					// ② 접근 가능
+// 		cout << b;
+// 	}
+
+// };
+
+// class GrandDerived : public Derived {
+// 	int c;
+// protected:
+// 	void setAB(int x) {
+// 		setA(x); 						// ③ 접근 불가능
+// 		showA(); 					// ④ 접근 불가능
+// 		setB(x); 						// ⑤ 접근 가능
+// 	}
+// };
 
 
 // #include <iostream>
