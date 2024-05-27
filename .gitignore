@@ -1,6 +1,0 @@
-*.out
-*.o
-/build
-/.vscode
-.gitignore
-/study
