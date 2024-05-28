@@ -11,29 +11,31 @@ public:
 };
 
 class NamedCircle : public Circle{
-    string name[5];
+    string name;
+    int r;
 public:
-    NamedCircle() : Circle(radius) {
+    NamedCircle() : Circle() {}
+    NamedCircle(int radius, string name) : Circle(radius) {
         this->name = name;
+        r = radius;
     }
     void show(){
+        cout << "반지름이 " << getRadius() << "인 " << name << endl;
+    }
+    void input(){
+        cout<<"5개의 정수 반지름과 원의 이름을 입력하세요"<<endl;
         for(int i=0; i<5; i++){
-            cout<<i+1<<">> "<<getArea()<<" "<<name<<endl;
+            cout<<i+1<<">> ";
+            cin>>r>>name;
         }
     }
-    void put(string name[]){
-        for(int i=0; i<5; i++){
-            this->name[i] = name[i];        
-        } 
-    }
+    
 };
 
 int main(){
     NamedCircle pizza[5];
-    cout<<"5개의 정수 반지름과 원의 이름을 입력하세요"<<endl;
-    cin>>pizza->put(name[]);
-    pizza->show();
-    cout<<"가장 면적이 큰 피자는 블랙홀 피자입니다."<<endl;
-
-    return 0;
+    pizza->input();
+    for(int i=0; i<5; i++){
+        pizza[i].show();
+    }
 }
